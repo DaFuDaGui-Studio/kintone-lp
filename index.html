@@ -127,13 +127,42 @@
 
   <body>
     <main class="flex flex-col justify-between mx-auto min-h-screen max-w-[1440px]">
-      <header class="relative flex justify-center sm:justify-start p-5 sm:p-12.5">
+      <header class="relative flex justify-center sm:justify-start p-5 sm:px-12.5 sm:pt-12.5 sm:pb-0">
         <div>
           <img src="./assets/logo.png" class="w-26 sm:w-auto h-auto sm:h-7.5" />
           <div class="rounded-full w-fit px-2 sm:px-5 py-1.25 sm:py-2.5 mt-2.5 bg-black text-xxs sm:text-base text-white font-black">來自日本的<span class="text-yellow-400">日常救援</span></div>
         </div>
       </header>
+      <!-- banner -->
+      <section>
+        <div class="relative hidden sm:block">
+          <img src="./assets/banner_d.png" class="pt-6.25 pl-12.5 pr-6" />
+          <div class="absolute bottom-12 left-12.5 flex items-center justify-center gap-[30px] w-[43%]">
+              <a href="https://kintone.tw/lp/form/trial/product_page/" target="_blank" rel="noopener noreferrer" class="w-1/2 transition-transform hover:scale-[1.02]">
+                <img src="./assets/banner_free_btn.png" class="w-full" />
+              </a>
+              <a href="https://kintone.tw/lp/form/trial/product_page/" target="_blank" rel="noopener noreferrer" class="w-1/2 transition-transform hover:scale-[1.02]">
+                <img src="./assets/banner_data_btn.png" class="w-full" />
+              </a>
+          </div>
 
+        </div>
+        <div class="relative block sm:hidden">
+          <img src="./assets/banner_m_title.png" class="w-full object-cover h-auto block sm:hidden pt-[1.25rem] pb-[0.625rem] px-[1.375rem]" />
+          <div class="relative">
+            <img src="./assets/banner_m.png" class="w-full object-cover h-auto block sm:hidden pt-[1.25rem] pb-[0.625rem] px-[1.375rem]" />
+            <div class="absolute bottom-7.5 left-0 right-0 flex items-center justify-center gap-[5px] w-[calc(100%-60px)] mx-auto px-4">
+              <a href="https://kintone.tw/lp/form/trial/product_page/" target="_blank" rel="noopener noreferrer" class="w-1/2 transition-transform hover:scale-[1.02]">
+                <img src="./assets/banner_free_btn.png" class="w-full" />
+              </a>
+              <a href="https://kintone.tw/lp/form/trial/product_page/" target="_blank" rel="noopener noreferrer" class="w-1/2 transition-transform hover:scale-[1.02]">
+                <img src="./assets/banner_data_btn.png" class="w-full" />
+              </a>
+            </div>
+          </div>
+        </div>
+        
+      </section>
       
       <!-- File 全球40,000 -->
       <!--<section>
