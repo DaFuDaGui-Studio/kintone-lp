@@ -170,10 +170,11 @@
         <img src="./assets/file_plus_m.png" class="px-[0.625rem] py-[1.25rem] w-full object-cover h-auto block sm:hidden sm:p-[3.125rem]" />
       </section>
 
+      <!-- 企業課題 -->
       <section class="max-w-360 mx-auto w-full">
         <!-- desktop -->
         <div
-          class="hidden sm:block px-25 py-12.5"
+          class="hidden sm:block py-12.5"
           x-data="{
             swiper: null,
             active: 1,
@@ -210,13 +211,19 @@
               if (this.swiper) {
                 this.swiper.slideToLoop(id - 1);
               }
+            },
+            scrollY() {
+              window.scrollTo({
+                top: document.querySelector('.solve').offsetTop - 50,
+                behavior: 'smooth'
+              });
             }
           }"
         >
-          <div class="grid grid-cols-4 gap-x-7.5">
+          <div class="grid grid-cols-4 gap-x-7.5 px-25">
               <!-- 企業課題 -->
               <template x-for="company in companies" :key="`company-${company.id}`">
-                <div @click="slideTo(company.id)" class="col-span-1 cursor-pointer translate-y-4" :class="{'!-translate-y-6': active == company.id}">
+                <div @click="slideTo(company.id); scrollY();" class="col-span-1 cursor-pointer translate-y-4" :class="{'!-translate-y-6': active == company.id}">
                   <img :src="`./assets/problems/${company.id}_lesson.png`" class="w-full h-auto" />
                   <img :src="`./assets/problems/${company.id}_improve.png`" class="w-full h-auto -translate-y-2" />
                   <img :src="`./assets/problems/${company.id}_click_deactive.png`" class="-translate-y-4" :class="{'hidden': active == company.id}"/>
@@ -230,7 +237,36 @@
                 </div>
               </template>
           </div>
-          <div class="solve w-full relative mt-7.5 pb-12.5">
+              
+          <div class="solve w-full relative mt-7.5 pb-12.5 px-12.5">
+            <div class="relative h-[3.4vw] cursor-pointer" :class="{'hidden': active != 1}">
+              <img @click="slideTo(4)" :src="`./assets/problems/4_label.png`" class="absolute -bottom-1 right-0 w-[26.1%] h-auto" />
+              <img @click="slideTo(3)"  :src="`./assets/problems/3_label.png`" class="absolute -bottom-1 right-[23.6%] w-[26.1%] h-auto" />
+              <img @click="slideTo(2)" :src="`./assets/problems/2_label.png`" class="absolute -bottom-1 right-[47.1%] w-[26.1%] h-auto" />
+              <img @click="slideTo(1)" :src="`./assets/problems/1_label_active.png`" class="absolute left-0 -bottom-1 w-[29.8%] h-auto" />
+            </div>
+
+            <div class="relative h-[3.4vw] cursor-pointer" :class="{'hidden': active != 2}">
+              <img @click="slideTo(4)" :src="`./assets/problems/4_label.png`" class="absolute -bottom-1 right-0 w-[26.1%] h-auto" />
+              <img @click="slideTo(3)"  :src="`./assets/problems/3_label.png`" class="absolute -bottom-1 right-[23.6%] w-[26.1%] h-auto" />
+              <img @click="slideTo(1)" :src="`./assets/problems/1_label.png`" class="absolute -bottom-1 left-0 w-[26.1%] h-auto" />
+              <img @click="slideTo(2)" :src="`./assets/problems/2_label_active.png`" class="absolute -bottom-1 right-[47%] w-[29.8%] h-auto" />
+            </div>
+
+            <div class="relative h-[3.4vw] cursor-pointer" :class="{'hidden': active != 3}">
+              <img @click="slideTo(4)" :src="`./assets/problems/4_label.png`" class="absolute -bottom-1 right-0 w-[26.1%] h-auto" />
+              <img @click="slideTo(2)" :src="`./assets/problems/2_label.png`" class="absolute -bottom-1 right-[50.2%] w-[26.1%] h-auto" />
+              <img @click="slideTo(1)" :src="`./assets/problems/1_label.png`" class="absolute -bottom-1 left-0 w-[26.1%] h-auto" />
+              <img @click="slideTo(3)"  :src="`./assets/problems/3_label_active.png`" class="absolute right-[23%] -bottom-1 w-[29.8%] h-auto" />
+            </div>
+
+            <div class="relative h-[3.4vw] cursor-pointer" :class="{'hidden': active != 4}">
+              <img @click="slideTo(3)"  :src="`./assets/problems/3_label.png`" class="absolute -bottom-1 right-[27.1%] w-[26.1%] h-auto" />
+              <img @click="slideTo(2)" :src="`./assets/problems/2_label.png`" class="absolute -bottom-1 right-[50.4%] w-[26.1%] h-auto" />
+              <img @click="slideTo(1)" :src="`./assets/problems/1_label.png`" class="absolute -bottom-1 left-0 w-[26.1%] h-auto" />
+              <img @click="slideTo(4)" :src="`./assets/problems/4_label_active.png`" class="absolute -bottom-1 right-0 w-[29.8%] h-auto" />
+            </div>
+            
             <div class="swiper swiper-container">
               <div class="swiper-wrapper">
                 <!--items-->
