@@ -128,9 +128,15 @@
   <body>
     <main class="flex flex-col justify-between mx-auto min-h-screen max-w-[1440px]">
       <header class="relative flex justify-center sm:justify-start p-5 sm:px-12.5 sm:pt-12.5 sm:pb-0">
-        <div>
-          <img src="./assets/logo.png" class="w-26 sm:w-auto h-auto sm:h-7.5" />
-          <div class="rounded-full w-fit px-2 sm:px-5 py-1.25 sm:py-2.5 mt-2.5 bg-black text-xxs sm:text-base text-white font-black">來自日本的<span class="text-yellow-400">日常救援</span></div>
+        <div class="w-28.5 sm:w-47.5">
+          <img
+            src="./assets/logo.svg"
+            class="hidden sm:block w-full h-auto"
+          />
+          <img
+            src="./assets/logo_sm.svg"
+            class="sm:hidden w-full h-auto"
+          />
         </div>
       </header>
       <!-- banner -->
